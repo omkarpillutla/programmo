@@ -1,0 +1,31 @@
+{% extends "layouts.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+
+    <form action="/buy" method="post">
+        <div class="mb-3">
+            <div>
+                <h4>Enter The Symbol Of The Crypto Currency You Want To Buy</h4>
+            </div>
+            <br>
+            <div>
+                <input id="symbol" name="symbol" autocomplete="off" autofocus name="q" placeholder="Symbol" type="text" class="form-control">
+            </div>
+        </div>
+        <br>
+        <div class="mb-3">
+            <input id="value" name="qty" autocomplete="off" autofocus name="q" placeholder="quantity" type="number" class="form-control">
+        </div>
+        <div>
+            <button id="buy" class="btn btn-primary" type="submit"> Buy </button>
+        </div>
+    </form>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+{% endblock %}

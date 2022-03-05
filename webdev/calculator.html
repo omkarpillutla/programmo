@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            .operator{
+                width: 100%;
+                background-color: gray;
+                color: black;
+                border: 3px solid red;
+            }
+
+            button{
+                width: 100%;
+                background-color: black;
+                color: white;
+                border: 2px solid blue;
+            }
+        </style>
+        <title>Calculator</title>
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <td colspan= "3"><input type="text" class="display" disabled/></td>
+                <td><button value="AC">AC</button></td>
+            </tr>
+
+            <tr>
+               <td><button value="7">7</button></td>
+               <td><button value="8">8</button></td>
+               <td><button value="9">9</button></td>
+               <td><button value="*" class ="operator">*</button></td>
+            </tr>
+            
+            <tr>
+                <td><button value="4">4</button></td>
+                <td><button value="5">5</button></td>
+                <td><button value="6">6</button></td>
+                <td><button value="/" class ="operator">/</button></td>
+             </tr>
+
+             <tr>
+                <td><button value="1">1</button></td>
+                <td><button value="2">2</button></td>
+                <td><button value="3">3</button></td>
+                <td><button value="-" class="operator">-</button></td> 
+             </tr>
+
+            <tr>
+                <td><button value=".">.</button></td>
+                <td><button value="0">0</button></td>
+                <td><button value="=">=</button></td>
+                <td><button value="+" class="operator">+</button></td>
+            </tr>
+        </table>
+
+        <script>
+            // Select all the buttons
+            const buttons = document.querySelectorAll('button');
+            
+            // Select .display
+            const display = document.querySelector('.display');
+
+            // Add event listener to each button
+            buttons.forEach(function(button)
+            {
+                button.addEventListener('click', calculate);
+            });
+
+            // Calculate function
+            function calculate(event)
+            {
+                // Value of button clicked
+                const buttonvalue = event.target.value;
+
+                if (buttonvalue === '=')
+                {
+                    // Problemo solved
+                    display.value = eval(display.value);
+                }
+                
+                else
+                if (buttonvalue === 'AC')
+                {
+                    // All clear
+                    display.value = '';
+                }
+
+                else
+                {
+                    // Concatenate to display
+                    display.value += buttonvalue;
+                }
+                
+            }
+        
+        </script>
+    </body>
+</html>

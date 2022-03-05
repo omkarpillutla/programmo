@@ -1,0 +1,16 @@
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+.yellow {
+    color: #FFAC33;
+}
+
+main {
+    text-align: center;
+}
+
+main .form-control {
+    display: inline-block;
+    width: auto;
+}

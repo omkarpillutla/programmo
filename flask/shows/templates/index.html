@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>shows</title>
+    </head>
+    <body>
+        <form action="/search" method="get">
+            <input autocomplete="off" autofocus name="q" placeholder="Query" type="search">
+        </form>
+
+        <ul></ul>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script>
+
+            let input = document.querySelector('input');
+            input.addEventListener('keyup', () => {
+                // AJAX request
+                $.get('/search?q=' + input.value, (shows) => {
+                    let html = ''
+                    for (let id in shows) {
+                        html += '<li>' + shows[id].title + '</li>'
+                    }
+                    document.querySelector('ul').innerHTML = html
+                });
+            });
+
+        </script>
+
+
+    </body>
+</html>

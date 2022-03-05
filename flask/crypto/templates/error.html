@@ -1,0 +1,14 @@
+{% extends "layouts.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+    <h3 class="errorCode">
+        Error {{ code }}
+    </h3>
+    <p class="errorMesage">
+        {{ message }}
+    </p>
+{% endblock %}

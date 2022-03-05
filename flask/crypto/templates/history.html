@@ -1,0 +1,30 @@
+{% extends "layouts.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Transaction ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Value</th>
+                <th scope="col">Buy/Sell</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in history %}
+                <tr>
+                    <th scope="row">{{item["symbol"]}}</th>
+                    <td>{{item["id"]}}</td>
+                    <td>{{item["name"]}}</td>
+                    <td>{{item["value"]}}</td>
+                    <td>{{item["type"]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

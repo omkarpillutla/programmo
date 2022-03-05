@@ -1,0 +1,39 @@
+{% extends "layouts.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+
+    <div>
+        <form action="/quote" method="post">
+            <div class="mb-3">
+                <input name="symbol" autocomplete="off" autofocus name="q" placeholder="Symbol" type="text" class="form-control">
+            </div>
+            <div>
+                <button id="buy" class="btn btn-primary" type="submit">Quote</button>
+            </div>
+        </form>
+    </div>
+    <br>
+    <br>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Quote</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <th scope="row">{{symbol}}</th>
+                        <td>{{name}}</td>
+                        <th scope="row">{{price}}</th>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
